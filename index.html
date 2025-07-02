@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raizware - Tecnologia com Raiz Brasileira</title>
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f4f0;
+      background: #f5f5f5;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
-      background: linear-gradient(90deg, #005f5f, #004d00);
+      background: url('https://source.unsplash.com/1600x500/?innovation,forest') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 2em 1em;
-      animation: fadeIn 2s ease;
+      padding: 6em 1em 3em;
+      position: relative;
     }
-    header img {
-      width: 100px;
-      margin-bottom: 1em;
-      filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+    header::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.5);
+    }
+    header h1, header p {
+      position: relative;
+      z-index:1;
     }
     header h1 {
-      font-size: 2em;
-      margin: 0;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-size:2.8em;
+      margin:0;
     }
     header p {
-      margin-top: 0.5em;
-      font-size: 1.1em;
+      font-size:1.2em;
       font-style: italic;
+      margin-top:0.5em;
     }
     nav {
-      background: #008000;
-      text-align: center;
+      background: #00aa88;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     nav a {
-      display: inline-block;
       color: white;
       text-decoration: none;
       padding: 1em;
@@ -47,61 +52,72 @@
       transition: background 0.3s;
     }
     nav a:hover {
-      background: #005500;
+      background: #008066;
     }
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 2em;
-      animation: fadeUp 1.5s ease;
+      padding: 3em 1em;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+    section.visible {
+      opacity:1;
+      transform: translateY(0);
     }
     section h2 {
-      color: #004d00;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3em;
+      color: #00aa88;
+      border-bottom: 3px solid #ff9900;
+      padding-bottom:0.3em;
     }
-    footer {
-      background: #eee;
-      text-align: center;
-      padding: 1.5em;
-      font-size: 0.9em;
-      color: #555;
+    section img {
+      max-width: 100%;
+      border-radius:8px;
+      margin:1em 0;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
     }
     .cta {
-      background: #006666;
+      background: #ff9900;
       color: white;
       text-align: center;
       padding: 2em;
-      border-radius: 6px;
-      margin: 2em 0;
+      border-radius: 8px;
+      margin:2em 0;
     }
     .cta a {
-      display: inline-block;
-      margin-top: 1em;
-      background: white;
-      color: #006666;
-      text-decoration: none;
-      padding: 0.7em 1.5em;
-      border-radius: 4px;
-      font-weight: bold;
+      display:inline-block;
+      margin-top:1em;
+      background:white;
+      color:#ff9900;
+      text-decoration:none;
+      padding:0.8em 1.8em;
+      border-radius:4px;
+      font-weight:bold;
       transition: background 0.3s;
     }
     .cta a:hover {
-      background: #ddd;
+      background: #ffe0b3;
     }
-    @keyframes fadeIn {
-      from { opacity:0; transform: translateY(-20px); }
-      to { opacity:1; transform: translateY(0); }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding:2em 1em;
+      font-size:0.9em;
     }
     @keyframes fadeUp {
-      from { opacity:0; transform: translateY(20px); }
-      to { opacity:1; transform: translateY(0); }
+      from {opacity:0; transform:translateY(20px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @media(max-width:600px) {
+      header h1 {font-size:2em;}
+      nav a {padding:0.8em;}
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="opcao 1.png" alt="Logo Raizware" />
     <h1>Raizware</h1>
     <p>Tecnologia com raiz brasileira</p>
   </header>
@@ -112,30 +128,48 @@
   </nav>
   <section id="sobre">
     <h2>Quem Somos</h2>
-    <p>Somos uma consultoria inovadora dedicada a unir tecnologia, educação e compromisso social. 
-    Desenvolvemos soluções digitais que respeitam a diversidade e valorizam a inteligência coletiva.</p>
+    <p>Somos uma consultoria que integra tecnologia, dados e educação com inovação e compromisso social. Criamos soluções digitais que respeitam nossa cultura e impulsionam empresas e pessoas.</p>
+    <img src="https://source.unsplash.com/800x400/?teamwork,technology" alt="Equipe">
   </section>
   <section id="servicos">
     <h2>Nossos Serviços</h2>
     <ul>
       <li>Consultoria em TI e transformação digital</li>
-      <li>Projetos de inteligência de dados e IA</li>
-      <li>Treinamentos e cursos online personalizados</li>
-      <li>Mentorias e apoio à inovação social</li>
+      <li>Projetos de inteligência artificial e dados</li>
+      <li>Treinamentos e cursos EAD personalizados</li>
+      <li>Mentoria para profissionais e empresas</li>
     </ul>
+    <img src="https://source.unsplash.com/800x400/?coding,education" alt="Tecnologia">
   </section>
   <div class="cta">
-    <h2>Pronto para inovar?</h2>
-    <p>Conecte-se com a gente e vamos transformar juntos.</p>
+    <h2>Pronto para transformar seu negócio?</h2>
+    <p>Conecte-se com nossa equipe e descubra como inovar com propósito.</p>
     <a href="#contato">Entrar em Contato</a>
   </div>
   <section id="contato">
     <h2>Contato</h2>
-    <p>Email: contato@raizware.com.br</p>
+    <p>Email: eder@raizware.com.br</p>
     <p>Telefone: (00) 0000-0000</p>
+    <img src="https://source.unsplash.com/800x400/?contact,communication" alt="Contato">
   </section>
   <footer>
-    &copy; 2024 Raizware. Todos os direitos reservados.
+    &copy; 2024 Raizware - Todos os direitos reservados.
   </footer>
+  <script>
+    const sections = document.querySelectorAll('section');
+    const options = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
