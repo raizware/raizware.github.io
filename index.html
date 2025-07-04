@@ -9,40 +9,46 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #f5f2eb;
+      background-color: #f5f3ed;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
     header {
-      background-color: #1b3b2f;
+      background-color: #163b2f;
       color: #fff;
-      padding: 40px 0;
+      padding: 60px 20px;
       text-align: center;
+      position: relative;
     }
     header img {
-      max-width: 120px;
+      max-width: 140px;
       display: block;
       margin: 0 auto 20px;
+      animation: fadeIn 2s ease;
     }
     header h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.2rem;
+      font-size: 2.8rem;
       margin: 0;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       margin-top: 10px;
-      color: #d1e0d0;
+      color: #cce0d0;
     }
     nav {
-      background-color: #254438;
+      background-color: #224d3b;
       text-align: center;
-      padding: 10px;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav a {
-      color: #f5f2eb;
+      color: #f5f3ed;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 18px;
       font-weight: 500;
       transition: color 0.3s;
     }
@@ -50,54 +56,71 @@
       color: #a9c5b1;
     }
     main.container {
-      max-width: 1000px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: 50px auto;
       padding: 0 20px;
     }
     .section {
       background: #fff;
-      padding: 30px;
-      margin-bottom: 30px;
+      padding: 40px;
+      margin-bottom: 40px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .section h2 {
-      color: #254438;
+      color: #224d3b;
       font-family: 'Space Grotesk', sans-serif;
       margin-top: 0;
     }
     .btn {
       display: inline-block;
-      background: #254438;
+      background: #224d3b;
       color: #fff;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 4px;
       text-decoration: none;
-      margin-top: 10px;
+      margin-top: 12px;
       transition: background 0.3s;
     }
     .btn:hover {
-      background: #3a5f4e;
+      background: #326d58;
     }
     footer {
-      background: #1b3b2f;
-      color: #d1e0d0;
+      background: #163b2f;
+      color: #cce0d0;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: #cce0d0;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #ffffff;
     }
     form input, form textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin-top: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
       font-family: 'Roboto', sans-serif;
     }
     form button {
-      background: #254438;
+      background: #224d3b;
       color: #fff;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
       margin-top: 10px;
       border-radius: 4px;
@@ -105,67 +128,92 @@
       transition: background 0.3s;
     }
     form button:hover {
-      background: #3a5f4e;
+      background: #326d58;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Tree_of_life_symbol.svg/1200px-Tree_of_life_symbol.svg.png" alt="Logo Raizware" />
+  <img src="opcao 1.png" alt="Logo Raizware" />
   <h1>RAIZWARE</h1>
   <p>Tecnologia com raiz brasileira.</p>
 </header>
 
 <nav>
-  <a href="#sobre">Sobre Nós</a>
+  <a href="#sobre">Sobre</a>
   <a href="#solucoes">Soluções</a>
+  <a href="#educacao">Educação</a>
   <a href="#repositorio">Repositório</a>
   <a href="#contato">Contato</a>
 </nav>
 
 <main class="container">
   <section id="sobre" class="section">
-    <h2>Sobre Nós</h2>
-    <p>A Raizware é uma empresa que combina tecnologia de ponta com raízes culturais brasileiras. Desenvolvemos soluções inovadoras em Dados, Inteligência Artificial e Educação Aplicada.</p>
+    <h2>Sobre a Raizware</h2>
+    <p>A Raizware é uma empresa brasileira que une tecnologia de ponta, dados e inteligência artificial com o compromisso de impactar positivamente empresas e instituições de ensino. Nossa missão é criar soluções transformadoras que respeitem nossa identidade cultural e ampliem o conhecimento.</p>
   </section>
 
   <section id="solucoes" class="section">
-    <h2>Soluções</h2>
-    <ul>
-      <li>Desenvolvimento de plataformas baseadas em dados.</li>
-      <li>Aplicações de IA com impacto real.</li>
-      <li>Recursos educacionais personalizados.</li>
-      <li>Consultoria tecnológica para transformação digital.</li>
-    </ul>
+    <h2>Soluções Empresariais em Dados e IA</h2>
+    <p>Desenvolvemos plataformas de dados inteligentes que apoiam decisões estratégicas, aplicando machine learning, automação e análise preditiva. Nossa equipe cria projetos personalizados para cada cliente, integrando tecnologia com inovação e resultados.</p>
+  </section>
+
+  <section id="educacao" class="section">
+    <h2>Educação Aplicada</h2>
+    <p>Acreditamos que a educação é a base do futuro. Oferecemos programas de capacitação em ciência de dados, inteligência artificial e pensamento computacional. Nossos cursos combinam teoria e prática, com foco em preparar profissionais para desafios reais.</p>
   </section>
 
   <section id="repositorio" class="section">
-    <h2>Envie seu Código</h2>
-    <p>Contribua com nosso repositório de soluções abertas e compartilhe seu conhecimento com a comunidade.</p>
+    <h2>Repositório de Códigos</h2>
+    <p>Contribua para nosso ecossistema compartilhando seu conhecimento. Envie scripts, modelos e projetos que possam apoiar a comunidade Raizware.</p>
     <form>
       <input type="text" name="nome" placeholder="Seu nome" required/>
       <input type="email" name="email" placeholder="Seu email" required/>
-      <textarea name="codigo" placeholder="Cole seu código ou link do repositório..." rows="6" required></textarea>
+      <textarea name="codigo" placeholder="Cole aqui seu código ou link do repositório..." rows="6" required></textarea>
       <button type="submit">Enviar Código</button>
     </form>
   </section>
 
   <section id="contato" class="section">
-    <h2>Contato</h2>
-    <p>Entre em contato para saber mais sobre nossos projetos e parcerias.</p>
+    <h2>Fale Conosco</h2>
+    <p>Entre em contato para saber mais sobre nossas soluções e projetos.</p>
     <form>
       <input type="text" name="nome" placeholder="Seu nome" required/>
       <input type="email" name="email" placeholder="Seu email" required/>
       <textarea name="mensagem" placeholder="Sua mensagem..." rows="4" required></textarea>
       <button type="submit">Enviar Mensagem</button>
     </form>
+    <div class="social-links" style="margin-top:20px;">
+      <a href="#" title="LinkedIn">&#x1F465;</a>
+      <a href="#" title="GitHub">&#x1F5C3;</a>
+      <a href="#" title="Twitter">&#x1F426;</a>
+    </div>
   </section>
 </main>
 
 <footer>
   &copy; 2025 Raizware. Todos os direitos reservados.
 </footer>
+
+<script>
+  // Animação ao rolar
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
