@@ -1,205 +1,105 @@
-paleta de cores harmonicas e ajustar no codigo:   <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raizware - Soluções em Dados, IA e Educação Aplicada</title>
-  <meta name="description" content="Raizware: tecnologia com raiz brasileira. Soluções em dados, inteligência artificial e educação aplicada para empresas e instituições de ensino.">
-  <meta name="author" content="Raizware">
-  <link rel="icon" href="opcao 1.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'IBM Plex Sans', sans-serif;
-      background-color: #f6f4ef;
-      color: #222;
-      line-height: 1.75;
-      font-size: 1.1rem;
-    }
-    header {
-      background: linear-gradient(135deg, #133B2E 0%, #2C5E4C 100%);
-      color: #fff;
-      text-align: center;
-      padding: 70px 20px;
-    }
-    header img {
-      max-width: 130px;
-      display: block;
-      margin: 0 auto 20px;
-    }
-    header h1 {
-      font-family: 'Archivo', sans-serif;
-      font-size: 2.6rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.25rem;
-      margin-top: 10px;
-      color: #d0e6d8;
-    }
-    nav {
-      background-color: #1E4A39;
-      text-align: center;
-      padding: 14px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav a {
-      color: #f6f4ef;
-      text-decoration: none;
-      margin: 0 18px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover,
-    nav a:focus {
-      color: #a9c5b1;
-      outline: none;
-    }
-    main.container {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #f6f4ef;
+    color: #222;
+    line-height: 1.75;
+    font-size: 1.1rem;
+  }
+  header {
+    background: #fff;
+    text-align: center;
+    padding: 30px 20px 0;
+  }
+  header img {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  nav {
+    background-color: #1a3c34;
+    text-align: center;
+    padding: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav a {
+    color: #f6f4ef;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  nav a:hover,
+  nav a:focus {
+    color: #cfe4d4;
+    outline: none;
+  }
+  main.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+  .section {
+    background: #fff;
+    padding: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .section h2 {
+    color: #1a3c34;
+    font-family: 'Archivo', sans-serif;
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+  footer {
+    background: #1a3c34;
+    color: #cfe4d4;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+  }
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+  }
+  form button {
+    background: #2c5e4c;
+    color: #fff;
+    padding: 12px 26px;
+    border: none;
+    margin-top: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  form button:hover,
+  form button:focus {
+    background: #1a3c34;
+    outline: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
     .section {
-      background: #fff;
-      padding: 50px;
-      margin-bottom: 50px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease, transform 1s ease;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .section h2 {
-      color: #1E4A39;
-      font-family: 'Archivo', sans-serif;
-      margin-top: 0;
-      font-size: 1.8rem;
-    }
-    footer {
-      background: #133B2E;
-      color: #d0e6d8;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.95rem;
-    }
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 14px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 1rem;
-    }
-    form button {
-      background: #1E4A39;
-      color: #fff;
-      padding: 12px 26px;
-      border: none;
-      margin-top: 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    form button:hover,
-    form button:focus {
-      background: #2c5e4c;
-      outline: none;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .section {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<header role="banner">
-  <img src="opcao 1.png" alt="Logotipo da Raizware"/>
-<!--  <h1>RAIZWARE</h1>
-  <p>Tecnologia com raiz brasileira.</p>  -->
-</header>
-
-<nav role="navigation" aria-label="Menu principal">
-  <a href="#sobre">Sobre</a>
-  <a href="#solucoes">Soluções</a>
-  <a href="#educacao">Educação</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<main class="container">
-  <section id="sobre" class="section" aria-labelledby="sobre-heading">
-    <h2 id="sobre-heading">Sobre a Raizware</h2>
-    <p>A Raizware é uma empresa brasileira que integra dados, inteligência artificial e inovação educacional. Nosso propósito é criar soluções tecnológicas que respeitem nossas raízes culturais e ajudem empresas e instituições a evoluir de maneira sustentável.</p>
-    <p>Desde 2010, desenvolvemos produtos e serviços que unem a modernidade digital com uma visão acadêmica e humanizada.</p>
-  </section>
-
-  <section id="solucoes" class="section" aria-labelledby="solucoes-heading">
-    <h2 id="solucoes-heading">Soluções em Dados e Inteligência Artificial</h2>
-    <p>Nossa equipe especializada projeta sistemas inteligentes com foco em:</p>
-    <ul>
-      <li>Análise avançada de dados e visualizações interativas.</li>
-      <li>Automação de processos empresariais com algoritmos de machine learning.</li>
-      <li>Integração de plataformas tecnológicas de ponta.</li>
-      <li>Consultoria estratégica em ciência de dados.</li>
-    </ul>
-  </section>
-
-  <section id="educacao" class="section" aria-labelledby="educacao-heading">
-    <h2 id="educacao-heading">Educação Aplicada</h2>
-    <p>Na Raizware, a educação é o alicerce da transformação. Oferecemos programas de capacitação que combinam prática, pesquisa e tecnologia:</p>
-    <ul>
-      <li>Formação em ciência de dados e inteligência artificial.</li>
-      <li>Workshops customizados para empresas e universidades.</li>
-      <li>Desenvolvimento de materiais didáticos interativos.</li>
-    </ul>
-  </section>
-
-  <section id="contato" class="section" aria-labelledby="contato-heading">
-    <h2 id="contato-heading">Fale Conosco</h2>
-    <p>Quer saber mais? Entre em contato e descubra como a Raizware pode transformar seus projetos.</p>
-    <form aria-label="Formulário de contato">
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" placeholder="Seu nome" required/>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Seu email" required/>
-      <label for="mensagem">Mensagem</label>
-      <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem..." rows="4" required></textarea>
-      <button type="submit">Enviar Mensagem</button>
-    </form>
-  </section>
-</main>
-
-<footer role="contentinfo">
-  &copy; 2025 Raizware. Todos os direitos reservados.
-</footer>
-
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-  });
-</script>
-
-</body>
-</html>
+  }
+</style>
