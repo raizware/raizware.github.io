@@ -8,17 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
     <style>
-        /* Variáveis CSS para Cores */
+        / Variáveis CSS para Cores /
         :root {
-            --primary-color: #2b6788; /* Azul principal */
-            --secondary-color: #a8d9e0; /* Azul claro de destaque */
-            --dark-color: #1f425b; /* Azul escuro para textos/rodapé */
-            --light-bg: #f5f8fb; /* Fundo claro para seções */
-            --text-color: #333; /* Cor de texto padrão */
+            --primary-color: #2b6788; / Azul principal /
+            --secondary-color: #a8d9e0; / Azul claro de destaque /
+            --dark-color: #1f425b; / Azul escuro para textos/rodapé /
+            --light-bg: #f5f8fb; / Fundo claro para seções /
+            --text-color: #333; / Cor de texto padrão /
             --white-color: #fff;
         }
 
-        /* Estilos Globais e Reset Básico */
+        / Estilos Globais e Reset Básico /
         body {
             margin:0;
             font-family:'IBM Plex Sans', sans-serif;
@@ -27,27 +27,27 @@
             line-height:1.7;
             font-size:1.1rem;
             transition: background-color 0.3s ease;
-            scroll-behavior: smooth; /* Rolagem suave para âncoras */
+            scroll-behavior: smooth; / Rolagem suave para âncoras /
         }
 
-        /* Container centralizado para o conteúdo principal */
+        / Container centralizado para o conteúdo principal /
         .container {
             max-width:1200px;
             margin:0 auto;
             padding:0 25px;
         }
 
-        /* Header (Cabeçalho) */
+        / Header (Cabeçalho) /
         header {
             background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
             color:var(--white-color);
-            padding:60px 0 80px; /* Mais padding para o hero */
+            padding:60px 0 80px; / Mais padding para o hero /
             text-align:center;
             position: relative;
             overflow: hidden;
         }
 
-        header::before { /* Efeito de fundo abstrato */
+        header::before { / Efeito de fundo abstrato /
             content: '';
             position: absolute;
             top: -50px;
@@ -58,7 +58,7 @@
             border-radius: 50%;
             animation: moveShape 10s infinite alternate ease-in-out;
         }
-        header::after { /* Efeito de fundo abstrato */
+        header::after { / Efeito de fundo abstrato /
             content: '';
             position: absolute;
             bottom: -50px;
@@ -81,7 +81,7 @@
         }
 
         .hero-content img {
-            max-width:180px; /* Tamanho do logo ajustado */
+            max-width:180px; / Tamanho do logo ajustado /
             display:block;
             margin:0 auto 25px;
             background:var(--white-color);
@@ -129,7 +129,7 @@
             transform: translateY(-3px);
         }
 
-        /* Nav (Barra de Navegação) */
+        / Nav (Barra de Navegação) /
         nav {
             background:var(--primary-color);
             text-align:center;
@@ -144,7 +144,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+            flex-wrap: wrap; / Permite que os itens quebrem linha em telas menores /
         }
 
         nav a {
@@ -179,12 +179,12 @@
             width: 100%;
         }
 
-        /* Main (Conteúdo Principal) */
+        / Main (Conteúdo Principal) /
         main {
             padding:60px 0;
         }
 
-        /* Seções de Conteúdo */
+        / Seções de Conteúdo /
         .section {
             background:var(--white-color);
             padding:60px;
@@ -203,7 +203,7 @@
             }
         }
 
-        .section:nth-child(2n) { /* Atraso para seções alternadas */
+        .section:nth-child(2n) { / Atraso para seções alternadas /
             animation-delay: 0.2s;
         }
         .section:nth-child(3n) {
@@ -224,7 +224,7 @@
             padding-bottom: 15px;
         }
 
-        .section h2::after { /* Linha de destaque para títulos */
+        .section h2::after { / Linha de destaque para títulos /
             content: '';
             position: absolute;
             width: 80px;
@@ -249,7 +249,7 @@
         }
 
         .section ul li::before {
-            content: "\f058"; /* Checkmark icon */
+            content: "\f058"; / Checkmark icon /
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             display: inline-block;
@@ -260,7 +260,7 @@
             top: 0;
         }
 
-        /* Cards de Valores/Características */
+        / Cards de Valores/Características /
         .values-grid, .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -296,7 +296,7 @@
             margin-bottom: 15px;
         }
 
-        /* Depoimentos */
+        / Depoimentos /
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -311,7 +311,7 @@
             position: relative;
         }
         .testimonial-card::before {
-            content: "\f10d"; /* Ícone de aspas */
+            content: "\f10d"; / Ícone de aspas /
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             position: absolute;
@@ -336,7 +336,7 @@
         }
 
 
-        /* Formulário de Contato */
+        / Formulário de Contato /
         form {
             display: grid;
             grid-gap: 20px;
@@ -390,7 +390,7 @@
             transform: translateY(-3px);
         }
 
-        /* Footer (Rodapé) */
+        / Footer (Rodapé) /
         footer {
             background:var(--dark-color);
             color:var(--secondary-color);
@@ -420,7 +420,7 @@
             color: #d7e9f2;
         }
 
-        /* Media Queries para Responsividade */
+        / Media Queries para Responsividade /
         @media (max-width: 992px) {
             .hero-content h1 {
                 font-size: 2.8rem;
@@ -472,7 +472,7 @@
                 font-size: 1.9rem;
             }
             .values-grid, .features-grid, .testimonial-grid {
-                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+                grid-template-columns: 1fr; / Uma coluna em telas menores /
             }
             .value-card, .feature-card, .testimonial-card {
                 padding: 25px;
@@ -512,7 +512,7 @@
     <div class="container hero-content">
         <img src="opcao 1.png" alt="Logotipo Raizware">
         <h1>Raizware</h1>
-        <p>A **raiz** da sua inovação em dados, inteligência artificial e educação, com **identidade brasileira** e alcance global.</p>
+        <p>A raiz da sua inovação em dados, inteligência artificial e educação, com identidade brasileira e alcance global.</p>
         <a href="#solucoes" class="cta-button">Descubra Nossas Soluções</a>
     </div>
 </header>
@@ -532,7 +532,7 @@
 <main>
     <section id="sobre" class="section container">
         <h2>Sobre a Raizware: Inovação e Legado</h2>
-        <p>Fundada em 2004, a Raizware nasceu com o propósito de integrar dados, inteligência artificial e educação aplicada para criar soluções de impacto real e duradouro. Nosso time multidisciplinar, com raízes profundas no talento brasileiro, conecta experiência técnica de ponta com uma visão humana e estratégica. Criamos projetos sob medida que promovem a **transformação digital**, o crescimento sustentável e a **inclusão** em empresas e instituições de ensino.</p>
+        <p>Fundada em 2004, a Raizware nasceu com o propósito de integrar dados, inteligência artificial e educação aplicada para criar soluções de impacto real e duradouro. Nosso time multidisciplinar, com raízes profundas no talento brasileiro, conecta experiência técnica de ponta com uma visão humana e estratégica. Criamos projetos sob medida que promovem a transformação digital, o crescimento sustentável e a inclusão em empresas e instituições de ensino.</p>
         <p>Com sede em São Paulo e atuação em todo o Brasil, somos a raiz da sua inovação tecnológica, com um olhar sempre voltado para o futuro e para as particularidades do mercado brasileiro.</p>
     </section>
 
@@ -565,7 +565,7 @@
 
     <section id="educacao" class="section container">
         <h2>Educação Aplicada: Conhecimento que GERA Impacto</h2>
-        <p>Acreditamos que a educação é a chave para o desenvolvimento e a **inclusão**. Nossos programas são desenhados para capacitar indivíduos e equipes, promovendo uma cultura de aprendizado contínuo e inovação:</p>
+        <p>Acreditamos que a educação é a chave para o desenvolvimento e a inclusão. Nossos programas são desenhados para capacitar indivíduos e equipes, promovendo uma cultura de aprendizado contínuo e inovação:</p>
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fas fa-graduation-cap"></i>
