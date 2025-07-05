@@ -1,202 +1,670 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raizware - Soluções em Dados, IA e Educação Aplicada</title>
-  <link rel="icon" href="opcao 1.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
-  <style>
-    body {
-      margin:0;
-      font-family:'IBM Plex Sans', sans-serif;
-      background:#eef1f4;
-      color:#333;
-      line-height:1.7;
-      font-size:1.1rem;
-    }
-    header {
-      background:#224e68;
-      color:white;
-      text-align:center;
-      padding:40px 20px 20px;
-    }
-    header img {
-      max-width:160px;
-      display:block;
-      margin:0 auto 15px;
-      background:white;
-      padding:10px;
-      border-radius:8px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size:2rem;
-      margin:10px 0 5px;
-      font-family:'Archivo',sans-serif;
-    }
-    header p {
-      font-size:1.2rem;
-      margin:0;
-      color:#cfe4d4;
-    }
-    nav {
-      background:#2b6788;
-      text-align:center;
-      padding:12px;
-    }
-    nav a {
-      color:#eef1f4;
-      text-decoration:none;
-      margin:0 15px;
-      font-weight:600;
-    }
-    nav a:hover {
-      color:#ffffff;
-    }
-    main {
-      max-width:1000px;
-      margin:30px auto;
-      padding:0 20px;
-    }
-    .section {
-      background:#fff;
-      padding:40px;
-      border-radius:8px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom:30px;
-    }
-    .section h2 {
-      margin-top:0;
-      color:#224e68;
-      font-family:'Archivo',sans-serif;
-      font-size:1.7rem;
-    }
-    footer {
-      background:#224e68;
-      color:#cfe4d4;
-      text-align:center;
-      padding:30px 20px;
-      font-size:0.95rem;
-    }
-    footer a {
-      color:#cfe4d4;
-      text-decoration:none;
-      margin:0 10px;
-      display:inline-block;
-      font-size:1.2rem;
-    }
-    footer a:hover {
-      color:#ffffff;
-    }
-    form input,
-    form textarea {
-      width:100%;
-      padding:12px;
-      margin-top:10px;
-      border:1px solid #ccc;
-      border-radius:4px;
-      font-family:'IBM Plex Sans',sans-serif;
-    }
-    form button {
-      background:#2b6788;
-      color:white;
-      padding:12px 24px;
-      border:none;
-      border-radius:4px;
-      margin-top:10px;
-      cursor:pointer;
-      font-weight:600;
-    }
-    form button:hover {
-      background:#224e68;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Raizware - Inovação em Dados, IA e Educação</title>
+    <link rel="icon" href="opcao 1.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <style>
+        /* Variáveis CSS para Cores */
+        :root {
+            --primary-color: #2b6788; /* Azul principal */
+            --secondary-color: #a8d9e0; /* Azul claro de destaque */
+            --dark-color: #1f425b; /* Azul escuro para textos/rodapé */
+            --light-bg: #f5f8fb; /* Fundo claro para seções */
+            --text-color: #333; /* Cor de texto padrão */
+            --white-color: #fff;
+        }
+
+        /* Estilos Globais e Reset Básico */
+        body {
+            margin:0;
+            font-family:'IBM Plex Sans', sans-serif;
+            background:var(--light-bg);
+            color:var(--text-color);
+            line-height:1.7;
+            font-size:1.1rem;
+            transition: background-color 0.3s ease;
+            scroll-behavior: smooth; /* Rolagem suave para âncoras */
+        }
+
+        /* Container centralizado para o conteúdo principal */
+        .container {
+            max-width:1200px;
+            margin:0 auto;
+            padding:0 25px;
+        }
+
+        /* Header (Cabeçalho) */
+        header {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color:var(--white-color);
+            padding:60px 0 80px; /* Mais padding para o hero */
+            text-align:center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before { /* Efeito de fundo abstrato */
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(168, 217, 224, 0.1);
+            border-radius: 50%;
+            animation: moveShape 10s infinite alternate ease-in-out;
+        }
+        header::after { /* Efeito de fundo abstrato */
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(168, 217, 224, 0.08);
+            border-radius: 50%;
+            animation: moveShape 12s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes moveShape {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(20px, 30px) scale(1.1); }
+        }
+
+        .hero-content {
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero-content img {
+            max-width:180px; /* Tamanho do logo ajustado */
+            display:block;
+            margin:0 auto 25px;
+            background:var(--white-color);
+            padding:15px;
+            border-radius:12px;
+            box-shadow:0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .hero-content img:hover {
+            transform: scale(1.08);
+        }
+
+        .hero-content h1 {
+            font-family:'Archivo',sans-serif;
+            font-size:3.2rem;
+            margin:20px 0 10px;
+            font-weight:700;
+            line-height:1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-content p {
+            font-size:1.4rem;
+            margin:0 auto 30px;
+            color:var(--secondary-color);
+            max-width:800px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display:inline-block;
+            background:var(--secondary-color);
+            color:var(--dark-color);
+            padding:15px 35px;
+            border-radius:8px;
+            text-decoration:none;
+            font-weight:700;
+            font-size:1.15rem;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+        }
+        .cta-button:hover {
+            background:var(--white-color);
+            transform: translateY(-3px);
+        }
+
+        /* Nav (Barra de Navegação) */
+        nav {
+            background:var(--primary-color);
+            text-align:center;
+            padding:18px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+        }
+
+        nav a {
+            color:var(--white-color);
+            text-decoration:none;
+            margin:0 20px;
+            font-weight:600;
+            position: relative;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--secondary-color);
+            visibility: hidden;
+            transition: width 0.3s ease-in-out, visibility 0s linear 0.3s;
+        }
+
+        nav a:hover {
+            color:var(--secondary-color);
+        }
+
+        nav a:hover::after {
+            visibility: visible;
+            width: 100%;
+        }
+
+        /* Main (Conteúdo Principal) */
+        main {
+            padding:60px 0;
+        }
+
+        /* Seções de Conteúdo */
+        .section {
+            background:var(--white-color);
+            padding:60px;
+            border-radius:15px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom:50px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(2n) { /* Atraso para seções alternadas */
+            animation-delay: 0.2s;
+        }
+        .section:nth-child(3n) {
+            animation-delay: 0.4s;
+        }
+        .section:nth-child(4n) {
+            animation-delay: 0.6s;
+        }
+
+        .section h2 {
+            margin-top:0;
+            color:var(--dark-color);
+            font-family:'Archivo',sans-serif;
+            font-size:2.5rem;
+            margin-bottom: 30px;
+            text-align:center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after { /* Linha de destaque para títulos */
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 15px;
+        }
+
+        .section ul li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .section ul li::before {
+            content: "\f058"; /* Checkmark icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            display: inline-block;
+            margin-right: 10px;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Cards de Valores/Características */
+        .values-grid, .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding-top: 20px;
+        }
+
+        .value-card, .feature-card {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover, .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .value-card i, .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3, .feature-card h3 {
+            color: var(--dark-color);
+            font-family: 'Archivo', sans-serif;
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* Depoimentos */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding-top: 20px;
+        }
+        .testimonial-card {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: "\f10d"; /* Ícone de aspas */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.5rem;
+            color: rgba(43, 103, 136, 0.1);
+            z-index: 0;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-card strong {
+            display: block;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+
+        /* Formulário de Contato */
+        form {
+            display: grid;
+            grid-gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        form input,
+        form textarea {
+            width:100%;
+            padding:16px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-family:'IBM Plex Sans',sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(43, 103, 136, 0.1);
+        }
+
+        form button {
+            background:var(--primary-color);
+            color:var(--white-color);
+            padding:18px 35px;
+            border:none;
+            border-radius:8px;
+            margin-top:20px;
+            cursor:pointer;
+            font-weight:600;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+            letter-spacing: 1px;
+        }
+
+        form button:hover {
+            background:var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        /* Footer (Rodapé) */
+        footer {
+            background:var(--dark-color);
+            color:var(--secondary-color);
+            text-align:center;
+            padding:40px 20px;
+            font-size:0.95rem;
+        }
+
+        footer .social-icons a {
+            color:var(--secondary-color);
+            text-decoration:none;
+            margin:0 15px;
+            display:inline-block;
+            font-size:1.6rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.2s ease-in-out;
+        }
+
+        footer .social-icons a:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+            color: var(--white-color);
+        }
+
+        footer p {
+            margin-top: 20px;
+            color: #d7e9f2;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            .section {
+                padding: 50px;
+            }
+            .section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0 60px;
+            }
+            .hero-content img {
+                max-width: 150px;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1.05rem;
+            }
+            nav .container {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 8px 0;
+                font-size: 0.95rem;
+            }
+            main {
+                padding: 40px 0;
+            }
+            .section {
+                padding: 30px;
+                margin-bottom: 40px;
+            }
+            .section h2 {
+                font-size: 1.9rem;
+            }
+            .values-grid, .features-grid, .testimonial-grid {
+                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+            }
+            .value-card, .feature-card, .testimonial-card {
+                padding: 25px;
+            }
+            footer .social-icons a {
+                font-size: 1.4rem;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 20px;
+            }
+            .section h2 {
+                font-size: 1.6rem;
+            }
+            form input, form textarea {
+                padding: 12px;
+            }
+            form button {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <img src="opcao%201.png" alt="Logotipo Raizware">
-  <h1>Raizware</h1>
-  <p>Inovação com identidade brasileira</p>
+    <div class="container hero-content">
+        <img src="opcao 1.png" alt="Logotipo Raizware">
+        <h1>Raizware</h1>
+        <p>A **raiz** da sua inovação em dados, inteligência artificial e educação, com **identidade brasileira** e alcance global.</p>
+        <a href="#solucoes" class="cta-button">Descubra Nossas Soluções</a>
+    </div>
 </header>
 
 <nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#solucoes">Soluções</a>
-  <a href="#educacao">Educação</a>
-  <a href="#cases">Cases</a>
-  <a href="#contato">Contato</a>
-  <a href="#politica">Privacidade</a>
+    <div class="container">
+        <a href="#sobre">Sobre</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#educacao">Educação</a>
+        <a href="#valores">Valores</a>
+        <a href="#cases">Cases</a>
+        <a href="#contato">Contato</a>
+        <a href="#politica">Privacidade</a>
+    </div>
 </nav>
 
 <main>
-  <section id="sobre" class="section">
-    <h2>Sobre a Raizware</h2>
-    <p>Fundada em 2010, a Raizware nasceu com o propósito de integrar dados, inteligência artificial e educação aplicada. Nosso time multidisciplinar conecta experiência técnica com uma visão humana, criando soluções sob medida para empresas e instituições de ensino.</p>
-    <p>Estamos sediados em São Paulo e atuamos em todo o Brasil.</p>
-  </section>
+    <section id="sobre" class="section container">
+        <h2>Sobre a Raizware: Inovação e Legado</h2>
+        <p>Fundada em 2010, a Raizware nasceu com o propósito de integrar **dados, inteligência artificial e educação aplicada** para criar soluções de impacto real e duradouro. Nosso time multidisciplinar, com raízes profundas no talento brasileiro, conecta experiência técnica de ponta com uma visão humana e estratégica. Criamos projetos sob medida que promovem a **transformação digital**, o crescimento sustentável e a **inclusão** em empresas e instituições de ensino.</p>
+        <p>Com sede em São Paulo e atuação em todo o Brasil, somos a **raiz** da sua inovação tecnológica, com um olhar sempre voltado para o futuro e para as particularidades do mercado brasileiro.</p>
+    </section>
 
-  <section id="solucoes" class="section">
-    <h2>Soluções em Dados e Inteligência Artificial</h2>
-    <ul>
-      <li>Análise de dados avançada e dashboards interativos.</li>
-      <li>Automação de processos com machine learning.</li>
-      <li>Integração de sistemas inteligentes.</li>
-      <li>Consultoria em transformação digital.</li>
-    </ul>
-  </section>
+    <section id="solucoes" class="section container">
+        <h2>Nossas Soluções: Impulsionando o Futuro com Dados e IA</h2>
+        <p>Capacitamos sua organização a tomar decisões mais inteligentes e eficientes, transformando dados brutos em insights valiosos e automatizando processos-chave:</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Análise e Visualização de Dados</h3>
+                <p>Dashboards interativos e análises profundas para inteligência de negócios e gestão estratégica.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-robot"></i>
+                <h3>Inteligência Artificial e Automação</h3>
+                <p>Desenvolvimento e implementação de soluções de Machine Learning para otimizar suas operações.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-link"></i>
+                <h3>Integração de Sistemas Inteligentes</h3>
+                <p>Conectividade e sinergia para um ecossistema de dados coeso e eficiente.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Consultoria em Transformação Digital</h3>
+                <p>Guiamos sua jornada de inovação com expertise, segurança e planejamento estratégico.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="educacao" class="section">
-    <h2>Educação Aplicada</h2>
-    <p>Transformamos conhecimento em impacto real:</p>
-    <ul>
-      <li>Programas de formação em dados e IA.</li>
-      <li>Workshops e palestras customizadas.</li>
-      <li>Desenvolvimento de conteúdos didáticos interativos.</li>
-    </ul>
-  </section>
+    <section id="educacao" class="section container">
+        <h2>Educação Aplicada: Conhecimento que GERA Impacto</h2>
+        <p>Acreditamos que a educação é a chave para o desenvolvimento e a **inclusão**. Nossos programas são desenhados para capacitar indivíduos e equipes, promovendo uma cultura de aprendizado contínuo e inovação:</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Programas de Formação Personalizados</h3>
+                <p>Desenvolvemos trilhas de conhecimento em dados e IA, do básico ao avançado, para sua equipe.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Workshops e Palestras Customizadas</h3>
+                <p>Conteúdo relevante e engajador, adaptado às suas necessidades e ao perfil do seu público.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-book-open"></i>
+                <h3>Desenvolvimento de Conteúdos Didáticos</h3>
+                <p>Materiais interativos e de alta qualidade que facilitam o aprendizado e a retenção.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Plataformas de Aprendizado Integradas</h3>
+                <p>Soluções tecnológicas para gestão e entrega de cursos online, com foco na experiência do usuário.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="cases" class="section">
-    <h2>Depoimentos e Cases de Sucesso</h2>
-    <blockquote>
-      "A Raizware desenvolveu uma solução de dados que reduziu 35% dos nossos custos operacionais em apenas 6 meses." <br>
-      <strong>— Ana Souza, Diretora de Operações, Empresa de suprimentos</strong>
-    </blockquote>
-    <blockquote>
-      "O programa de capacitação da Raizware transformou nossa equipe técnica. Hoje somos referência em dados." <br>
-      <strong>— Carlos Lima, Gerente de TI, Consultoria em fulfillment </strong>
-    </blockquote>
-  </section>
+    <section id="valores" class="section container">
+        <h2>Nossos Valores: A Base da Raizware</h2>
+        <p>Na Raizware, somos guiados por princípios sólidos que fortalecem nossas parcerias e nosso impacto na sociedade:</p>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Crescimento Orgânico</h3>
+                <p>Impulsionamos o desenvolvimento contínuo através da colaboração e do aprendizado.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-cubes"></i>
+                <h3>Integração Completa</h3>
+                <p>Conectamos pessoas, tecnologias e ideias para construir soluções coesas e eficientes.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-users-cog"></i>
+                <h3>Inovação Inclusiva</h3>
+                <p>Promovemos o acesso e a participação de todos na construção de um futuro tecnológico.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-brain"></i>
+                <h3>Inteligência Aplicada</h3>
+                <p>Transformamos dados em conhecimento e soluções práticas que geram valor real.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="contato" class="section">
-    <h2>Fale Conosco</h2>
-    <p>Entre em contato pelo e-mail <strong><a href="mailto:eder@raizware.com.br">eder@raizware.com.br</a></strong> ou preencha o formulário abaixo:</p>
-    <form>
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" required>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-      <label for="mensagem">Mensagem</label>
-      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-      <button type="submit">Enviar Mensagem</button>
-    </form>
-  </section>
+    <section id="cases" class="section container">
+        <h2>Cases de Sucesso e Depoimentos</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"A Raizware desenvolveu uma solução de dados que reduziu 35% dos nossos custos operacionais em apenas 6 meses, demonstrando um profissionalismo e uma capacidade de integração excepcionais. O suporte contínuo é um diferencial!"</p>
+                <strong>— Ana Souza, Diretora de Operações, Empresa de Suprimentos</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"O programa de capacitação da Raizware transformou nossa equipe técnica. Hoje somos referência em dados e IA, e isso é um reflexo direto da qualidade e da abordagem inclusiva que a Raizware trouxe para nossa empresa."</p>
+                <strong>— Carlos Lima, Gerente de TI, Consultoria em Fulfillment</strong>
+            </div>
+        </div>
+    </section>
 
-  <section id="politica" class="section">
-    <h2>Política de Privacidade</h2>
-    <p>Seus dados pessoais são tratados de acordo com a Lei Geral de Proteção de Dados (LGPD). Coletamos apenas as informações necessárias para responder suas solicitações. Não compartilhamos seus dados com terceiros sem sua autorização.</p>
-  </section>
+    <section id="contato" class="section container">
+        <h2>Fale Conosco</h2>
+        <p>Tem um projeto em mente, quer saber mais sobre nossas soluções inovadoras ou agendar uma conversa? Preencha o formulário abaixo e entraremos em contato:</p>
+        <form>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" required>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+        <p style="text-align: center; margin-top: 30px;">Ou se preferir, entre em contato diretamente pelo e-mail: <strong><a href="mailto:eder@raizware.com.br" style="color: var(--primary-color); text-decoration: none;">eder@raizware.com.br</a></strong></p>
+    </section>
+
+    <section id="politica" class="section container">
+        <h2>Política de Privacidade</h2>
+        <p>Na Raizware, a segurança e a privacidade dos seus dados são nossa prioridade. Tratamos suas informações pessoais com o máximo rigor, em estrita conformidade com a Lei Geral de Proteção de Dados (LGPD). Coletamos apenas os dados estritamente necessários para responder às suas solicitações e aprimorar continuamente nossos serviços, garantindo sempre a transparência e o seu controle sobre suas informações. Não compartilhamos seus dados com terceiros sem sua autorização expressa, assegurando a confidencialidade e a integridade da sua privacidade online.</p>
+    </section>
 </main>
 
 <footer>
-  &copy; 2025 Raizware. Todos os direitos reservados. <br/>
-  <a href="mailto:eder@raizware.com.br" title="E-mail"><i class="fas fa-envelope"></i></a>
-  <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-  <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-  <a href="https://wa.me/5500000000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <div class="container">
+        <p>© 2025 Raizware. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="mailto:eder@raizware.com.br" title="E-mail"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/5500000000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
 </footer>
 
 </body>
