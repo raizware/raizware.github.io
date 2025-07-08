@@ -335,8 +335,8 @@
             font-size: 1.05rem;
         }
 
-
-        /* Formulário de Contato */
+        /* Removendo estilos do formulário que não serão mais usados */
+        /*
         form {
             display: grid;
             grid-gap: 20px;
@@ -389,6 +389,7 @@
             background:var(--dark-color);
             transform: translateY(-3px);
         }
+        */
 
         /* Footer (Rodapé) */
         footer {
@@ -454,11 +455,15 @@
                 padding: 12px 25px;
                 font-size: 1.05rem;
             }
+            /* Ajustes para o menu de navegação em telas menores */
+            nav {
+                padding: 10px 0; /* Reduz o padding vertical da barra de navegação */
+            }
             nav .container {
                 flex-direction: column;
             }
             nav a {
-                margin: 8px 0;
+                margin: 5px 0; /* Reduz a margem vertical entre os links */
                 font-size: 0.95rem;
             }
             main {
@@ -496,6 +501,8 @@
             .section h2 {
                 font-size: 1.6rem;
             }
+            /* Removendo estilos de formulário para telas pequenas também */
+            /*
             form input, form textarea {
                 padding: 12px;
             }
@@ -503,6 +510,7 @@
                 padding: 15px 25px;
                 font-size: 1.1rem;
             }
+            */
         }
     </style>
 </head>
@@ -633,19 +641,8 @@
 
     <section id="contato" class="section container">
         <h2>Fale Conosco</h2>
-        <p>Tem um projeto em mente, quer saber mais sobre nossas soluções inovadoras ou agendar uma conversa? Preencha o formulário abaixo e entraremos em contato:</p>
-        <form>
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="assunto">Assunto</label>
-            <input type="text" id="assunto" name="assunto" required>
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
-            <button type="submit">Enviar Mensagem</button>
-        </form>
-        <p style="text-align: center; margin-top: 30px;">Ou se preferir, entre em contato diretamente pelo e-mail: <strong><a href="mailto:eder@raizware.com.br" style="color: var(--primary-color); text-decoration: none;">eder@raizware.com.br</a></strong></p>
+        <p style="text-align: center; margin-top: 0; font-size: 1.1rem;">Tem um projeto em mente, quer saber mais sobre nossas soluções inovadoras ou agendar uma conversa? Entre em contato diretamente pelo e-mail:</p>
+        <p style="text-align: center; margin-top: 20px;"><strong style="font-size: 1.3rem;"><a href="mailto:eder@raizware.com.br" style="color: var(--primary-color); text-decoration: none;">eder@raizware.com.br</a></strong></p>
     </section>
 
     <section id="politica" class="section container">
