@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Raizware - Inovação em Dados, IA e Educação</title>
+    <link rel="icon" href="opcao 1.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* NOVA IDENTIDADE VISUAL: RETRÔ PROFISSIONAL */
+        :root {
+            /* Paleta de cores inspirada em tons terrosos e materiais orgânicos */
+            --background-color: #f4f1ea; /* Off-white, como papel antigo */
+            --text-color: #3a3a3a;       /* Cinza escuro/chumbo, mais suave que o preto */
+            --primary-color: #b5835a;    /* Ocre/Cobre, a cor de destaque principal */
+            --dark-color: #2c2c2c;        /* Quase preto para rodapé e alto contraste */
+            --highlight-color: #e9e4d9;  /* Destaque sutil para cards */
+            
+            /* Nova tipografia */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        /* Estilos Globais com textura de fundo */
+        body {
+            margin:0;
+            font-family: var(--font-body);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        
+        /* Efeito de textura sutil sobre o fundo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXVpaWlwcXFzyr/Z1tJ3d3dycnJuam1tbW13d3dxcXF2dnZ3d3d5eXl1dXV6enp0dHR2dnZ1dXXT0tN2dnZ3d3d2dnZ2dnZ2dnZ2dnZ2dnZz/T2dAAAAGnRSTlPBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAgIK/B4AAAA/SURBVEjHY2AUjogKBAZG4kY0YDBQEBFgZWRgZGRgAWIsBgeAYh0GAwFhPSwA2E4HhoUMSwADhCVgAJoGAAA2vADv/wApGAAAAABJRU5ErkJggg==');
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width:1100px;
+            margin:0 auto;
+            padding:0 25px;
+        }
+
+        /* Header (Cabeçalho) - Clean e Focado */
+        header {
+            background: transparent;
+            color: var(--text-color);
+            padding: 80px 0;
+            text-align:center;
+        }
+
+        .hero-content img {
+            max-width:160px;
+            display:block;
+            margin:0 auto 25px;
+            border: 3px solid var(--text-color);
+            padding:10px;
+            background-color: var(--background-color);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .hero-content img:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            margin:20px 0 10px;
+            font-weight:700;
+            color: var(--text-color);
+        }
+
+        .hero-content p {
+            font-size:1.3rem;
+            margin:0 auto 35px;
+            max-width:700px;
+            font-weight: 300;
+            color: var(--text-color);
+        }
+
+        .cta-button {
+            display:inline-block;
+            background: var(--primary-color);
+            color: var(--background-color);
+            padding: 14px 40px;
+            text-decoration:none;
+            font-weight:700;
+            font-size:1.1rem;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .cta-button:hover {
+            background: transparent;
+            color: var(--primary-color);
+        }
+
+        /* Nav (Barra de Navegação) - Estilo Clássico */
+        nav {
+            background: rgba(244, 241, 234, 0.85); /* Fundo com transparência */
+            backdrop-filter: blur(8px); /* Efeito de vidro fosco */
+            text-align:center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd8ce;
+            border-top: 1px solid #ddd8ce;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.4s ease;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration:none;
+            font-weight:600;
+            position: relative;
+            transition: color 0.3s ease;
+            padding: 5px 5px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            padding: 60px 0;
+        }
+
+        .section {
+            padding: 60px 0;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #ddd8ce;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-top:0;
+            margin-bottom: 40px;
+            text-align:center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        /* Linha decorativa abaixo dos títulos */
+        .section h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Cards - Bordas em vez de sombras */
+        .values-grid, .features-grid, .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card, .feature-card {
+            background-color: transparent;
+            padding: 30px;
+            border: 1px solid #ddd8ce;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover, .feature-card:hover {
+            border-color: var(--primary-color);
+            background-color: var(--background-color);
+            transform: translateY(-5px);
+        }
+
+        .value-card i, .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3, .feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* Depoimentos - Estilo "Pull Quote" */
+        .testimonial-grid {
+             grid-template-columns: 1fr; /* Um depoimento por vez para mais impacto */
+             max-width: 800px;
+             margin: 0 auto;
+        }
+        .testimonial-card {
+            background-color: transparent;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: "\f10d"; /* Ícone de aspas */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.5;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .testimonial-card p {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        .testimonial-card strong {
+            display: block;
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-style: normal;
+        }
+
+        /* Seção de Contato */
+        #contato p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #contato .email-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        #contato .email-link:hover {
+            color: var(--text-color);
+        }
+        
+        /* Footer (Rodapé) */
+        footer {
+            background: var(--dark-color);
+            color: var(--background-color);
+            text-align:center;
+            padding: 50px 20px;
+            font-size:0.95rem;
+        }
+
+        footer .social-icons {
+            margin-bottom: 25px;
+        }
+        
+        footer .social-icons a {
+            color: var(--background-color);
+            opacity: 0.7;
+            text-decoration:none;
+            margin:0 15px;
+            display:inline-block;
+            font-size:1.5rem;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            opacity: 1;
+            transform: translateY(-5px) scale(1.1);
+            color: var(--primary-color);
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.7;
+        }
+        
+        /* Animações de Scroll (mantidas pois são ótimas) */
+        .animated-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            body { font-size: 1rem; }
+            .hero-content h1 { font-size: 3rem; }
+            .hero-content p { font-size: 1.1rem; }
+            .section h2 { font-size: 2.5rem; }
+            nav .container { gap: 10px 15px; }
+            nav a { font-size: 0.9rem; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            nav .container { justify-content: space-around; }
+            nav a { font-size: 0.8rem; }
+            nav a::after { bottom: -5px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="animated-element">
+    <div class="container hero-content">
+        <img src="opcao 1.png" alt="Logotipo Raizware">
+        <h1>Raizware</h1>
+        <p>A <strong>raiz</strong> da sua inovação em dados, inteligência artificial e educação, com <strong>identidade brasileira</strong> e alcance global.</p>
+        <a href="#solucoes" class="cta-button">Conheça as Soluções</a>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="#sobre">Sobre</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#educacao">Educação</a>
+        <a href="#valores">Valores</a>
+        <a href="#cases">Cases</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
+<main class="container">
+    <section id="sobre" class="section animated-element">
+        <h2>Sobre Nós</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">Fundada em 2010, a Raizware nasceu com o propósito de integrar <strong>dados, inteligência artificial e educação aplicada</strong> para criar soluções de impacto real e duradouro. Nosso time multidisciplinar, com raízes profundas no talento brasileiro, conecta experiência técnica de ponta com uma visão humana e estratégica. Criamos projetos sob medida que promovem a <strong>transformação digital</strong>, o crescimento sustentável e a <strong>inclusão</strong> em empresas e instituições de ensino.</p>
+    </section>
+
+    <section id="solucoes" class="section animated-element">
+        <h2>Nossas Soluções</h2>
+        <div class="features-grid">
+            <div class="feature-card animated-element">
+                <i class="fas fa-chart-line"></i>
+                <h3>Análise de Dados</h3>
+                <p>Dashboards interativos e análises profundas para inteligência de negócios e gestão estratégica.</p>
+            </div>
+            <div class="feature-card animated-element">
+                <i class="fas fa-robot"></i>
+                <h3>IA & Automação</h3>
+                <p>Desenvolvimento e implementação de soluções de Machine Learning para otimizar suas operações.</p>
+            </div>
+            <div class="feature-card animated-element">
+                <i class="fas fa-cogs"></i>
+                <h3>Consultoria Digital</h3>
+                <p>Guiamos sua jornada de inovação com expertise, segurança e planejamento estratégico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="educacao" class="section animated-element">
+        <h2>Educação Aplicada</h2>
+        <div class="features-grid">
+            <div class="feature-card animated-element">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Formação Personalizada</h3>
+                <p>Desenvolvemos trilhas de conhecimento em dados e IA, do básico ao avançado, para sua equipe.</p>
+            </div>
+            <div class="feature-card animated-element">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Workshops Customizados</h3>
+                <p>Conteúdo relevante e engajador, adaptado às suas necessidades e ao perfil do seu público.</p>
+            </div>
+            <div class="feature-card animated-element">
+                 <i class="fas fa-laptop-code"></i>
+                <h3>Plataformas de Aprendizado</h3>
+                <p>Soluções tecnológicas para gestão e entrega de cursos online, com foco na experiência do usuário.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="valores" class="section animated-element">
+        <h2>Nossos Valores</h2>
+        <div class="values-grid">
+            <div class="value-card animated-element">
+                <i class="fas fa-seedling"></i>
+                <h3>Crescimento Orgânico</h3>
+                <p>Impulsionamos o desenvolvimento contínuo através da colaboração e do aprendizado.</p>
+            </div>
+            <div class="value-card animated-element">
+                <i class="fas fa-cubes"></i>
+                <h3>Integração Completa</h3>
+                <p>Conectamos pessoas, tecnologias e ideias para construir soluções coesas e eficientes.</p>
+            </div>
+            <div class="value-card animated-element">
+                <i class="fas fa-users-cog"></i>
+                <h3>Inovação Inclusiva</h3>
+                <p>Promovemos o acesso e a participação de todos na construção de um futuro tecnológico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases" class="section animated-element">
+        <h2>Cases & Depoimentos</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card animated-element">
+                <p>"A Raizware desenvolveu uma solução de dados que reduziu 35% dos nossos custos operacionais em apenas 6 meses. O profissionalismo e o suporte contínuo são um diferencial enorme!"</p>
+                <strong>— Ana Souza, Diretora de Operações</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section animated-element">
+        <h2>Fale Conosco</h2>
+        <p>Tem um projeto em mente, quer saber mais sobre nossas soluções ou agendar uma conversa? Estamos prontos para ajudar a construir o futuro da sua organização.</p>
+        <a href="mailto:eder@raizware.com.br" class="email-link">eder@raizware.com.br</a>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="social-icons">
+             <a href="mailto:eder@raizware.com.br" title="E-mail"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5500000000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>© 2025 Raizware. Todos os direitos reservados.</p>
+        <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 15px;">Em conformidade com a LGPD. Respeitamos sua privacidade.</p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.animated-element');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+</script>
+
+</body>
+</html>
